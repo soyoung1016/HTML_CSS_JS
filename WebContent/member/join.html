@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td colspan="2" align="center">회 원 가 입</td>
+	</tr>
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="id" readonly="readonly"/>&nbsp;<input type="submit" value="중복확인"/> </td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="pass" maxlength="16" /></td>
+	</tr>
+	<tr>
+		<td>비밀번호 확인</td>
+		<td><input type="password" name="passcheck" maxlength="16" /></td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name="name" maxlength="10" /></td>
+	</tr>
+	<tr>
+		<td>주민번호</td>
+		<td><input type="text" name="birth_b" size="6" maxlength="6"/>-<input type="password" name="birth_a" size="6" maxlength="7" /></td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td><input type="radio" value="남자" name="gender"/>남자 <input type="radio" value="여자" name="gender" checked="checked"/>여자</td>
+	</tr>
+	<tr>
+		<td>생년월일</td>
+		<td>
+			<select name="year">
+				<option selected>2019</option>
+				<option>2018</option>
+				<option>2017</option>
+			</select>년 
+			<select name="month">
+				<option selected>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>월 
+			<select name="day">
+				<option selected>1</option>
+				<option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option>
+				<option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+				<option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option>
+				<option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option>
+				<option>30</option><option>31</option>
+			</select>일  
+		</td>
+	</tr>
+	<tr>
+		<td>나이</td>
+		<td><input type="text" name="age" maxlength="3" />세</td>
+	</tr>
+	<tr>
+		<td>관심언어</td>
+		<td>
+			<input type="checkbox" name="language" value="java"/>java&nbsp;
+			<input type="checkbox" name="language" value="c"/>C/C++&nbsp;
+			<input type="checkbox" name="language" value="python"/>ASP&nbsp;
+			<input type="checkbox" name="language" value="db"/>DB<br>
+			<input type="checkbox" name="language" value="jsp"/>JSP&nbsp;
+			<input type="checkbox" name="language" value="servlet"/>Servlet&nbsp;
+			<input type="checkbox" name="language" value="asp"/>ASP&nbsp;
+			<input type="checkbox" name="language" value="php"/>php&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td>결혼여부</td>
+		<td><input type="radio" value="미혼" name="merry" checked="checked"/>미혼 <input type="radio" value="기혼" name="merry" />기혼</td>
+	</tr>
+	<tr>
+		<td>우편번호</td>
+		<td>
+			<input type="text" size="3" name="zip_b" readonly="readonly"/>-<input type="text" size="3" name="zip_a" readonly="readonly"/> 
+			<input type="button" value="우편번호검색"/> 
+		</td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td><input type="text" name="add" readonly="readonly"/></td>
+	</tr>
+	<tr>
+		<td>상세주소</td>
+		<td><input type="text" name="de_add"/></td>
+	</tr>
+	<tr>
+		<td>가입인사</td>
+		<td><textarea name="ta" rows="6" cols="35"></textarea></td>
+	</tr>
+	<tr>
+		<!-- <td></td> -->
+		<td colspan="2" align="center"><input type="submit" name="go" value="가입"/> <input type="reset" name="re" value="초기화"/></td>
+		<!-- <td></td> -->
+	</tr>
+</table>
+
+</body>
+</html>

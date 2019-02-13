@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<title></title>
+<style type="text/css">
+	strong{font-size: 16px}
+</style>
+<script type="text/javascript">
+	//한줄 주석
+	/*여러줄 주석
+	여러줄 주석 닫음*/
+	//최단산쉬관논삼대콤마
+	/*
+		1. 단항 : 연산에 필요한 항이 한개인 연산자(unary)
+		~(tilde) : 1의 보수 연산 (0을, 1로. 1을 으로 바꿈)
+		!(not) : true->false, false->true
+		+ : 형식적 제공
+		- : 부호바꿈연산자, 2의 보수 연산자
+		++ : 증가연산
+		-- : 감소연산
+		
+		-전위연산
+		연산자 대상자
+	*/
+	var num1=2;
+	var num2=-2;
+	var flag1 = true;
+	var flag2 = false;
+	//window는 최상위 객체로 생략하여 사용할 수 있다.
+	document.write("<ul>");
+	document.write("<li>할당된 값 :"+ num1+ "</li>");
+	//~ : 1을 증가시키고 부호바꿈
+	document.write("<li>~ :"+num1+"="+ (~num1)+ "</li>");
+	document.write("<li>~ :"+num2+"="+ (~num2)+ "</li>");
+	//!
+	document.write("<li>! :"+flag1+"="+ (!flag1)+ "</li>");
+	document.write("<li>! :"+flag2+"="+ (!flag2)+ "</li>");
+	//+ : 아무 기능 없음
+	document.write("<li>+ :"+num1+"="+ (+num1)+ "</li>");
+	document.write("<li>+ :"+num2+"="+ (+num2)+ "</li>");
+	//- : 부호 바꿈
+	document.write("<li>- :"+num1+"="+ (-num1)+ "</li>");
+	document.write("<li>- :"+num2+"="+ (-num2)+ "</li>");
+	//++ : 대상체의 값을 1씩 증가
+	document.write("<li>++ :"+num1+"="+ (++num1)+ "</li>");
+	document.write("<li>++ :"+num2+"="+ (++num2)+ "</li>");
+	//-- : 대상체의 값을 1씩 감소
+	document.write("<li>-- :"+num1+"="+ (--num1)+ "</li>");
+	document.write("<li>-- :"+num2+"="+ (--num2)+ "</li>");
+	//대입 연산자와 함께 사용되거나, 함수의 인수값으로 넣어줄 때에는 전위냐 후위냐가 다른 값을 할당한다.
+	result = 0;
+	result = ++num1;
+	document.write("<li>전위 연산 후 : result ="+result+", num1="+ num1+ "</li>");
+	result = 0;
+	result = num1++;
+	document.write("<li>후위 연산 후 : result ="+result+", num1="+ num1+ "</li>");
+	
+	//산술연산 : +, -, *, /, %
+	document.write("<li><strong>산술연산</strong></li>");
+	document.write("<li>"+num1%2+"</li>");
+	
+	//쉬프트연산
+	//<< : 비트를 왼쪽으로 밀고 밀어서 빈칸을 0으로 채운다.
+	//>> : 비트를 밀고 밀어서 생긴 빈칸을 최상위 부호비트에 따라 0또는 1로 채운다.
+	//>>> : 비트를 밀고 밀어서 생긴 빈칸을 항상 0으로 채운다.
+	document.write("<li><strong>쉬프트연산</strong></li>");
+	document.write("<li>"+num1+"<<2="+(num1<<2)+"</li>");
+	
+	
+	//관계연산 : >, <, >=, <=, ==, ===, !=, !==
+	num1 = "2";
+	num2 = 2;
+	document.write("<li><strong>관계연산</strong></li>");
+	//== : 데이터형이 달라도 값이 같다면 true
+	document.write("<li>"+num1+"=="+num2+"="+(num1==num2)+"</li>");//true
+	//=== : 데이터형과 값이 모두 같아야 true
+	document.write("<li>"+num1+"==="+num2+"="+(num1===num2)+"</li>");//false
+	//!= : 데이터형이 달라도 값이 같다면 true
+	document.write("<li>"+num1+"!="+num2+"="+(num1!=num2)+"</li>");//false
+	//!== : 데이터형과 값이 모두 같아야 true
+	document.write("<li>"+num1+"!=="+num2+"="+(num1!==num2)+"</li>");//true
+	document.write("</ul>")
+	
+	//논리 
+	//일반논리 : && : 전항과 후항이 모두 참일 때만 참 반환
+	//           || : 전항과 후항이 모두 거짓일때만 거짓 반환
+	//전항이 거짓이면 후항을 연산하지 않는다.
+	document.write("<li>"+ flag1 +"&&"+flag1+"="+(flag1&&flag1)+"</li>");
+	document.write("<li>"+ flag1 +"&&"+flag2+"="+(flag1&&flag2)+"</li>");
+	document.write("<li>"+ flag2 +"&&"+flag1+"="+(flag2&&flag1)+"</li>");
+	document.write("<li>"+ flag2 +"&&"+flag2+"="+(flag2&&flag2)+"</li>");
+	//전항이 참이면 후항을 연산하지 않는다.
+	document.write("<li>"+ flag1 +"||"+flag1+"="+(flag1||flag1)+"</li>");
+	document.write("<li>"+ flag1 +"||"+flag2+"="+(flag1||flag2)+"</li>");
+	document.write("<li>"+ flag2 +"||"+flag1+"="+(flag2||flag1)+"</li>");
+	document.write("<li>"+ flag2 +"||"+flag2+"="+(flag2||flag2)+"</li>");
+	//비트논리 : & : 상위비트와 하위비트 둘 다 1인 경우 1
+	//			 | : 상위비트와 하위비트 둘 다 0인 경우 0
+	//			 ^ : 상위비트와 하위비트 둘 중 하나만 1인경우 1
+	num1 = 21;
+	num2 = 18;
+	document.write("<li>"+ num1 +"&"+num2+"="+(num1&num2)+"</li>");
+	document.write("<li>"+ num1 +"|"+num2+"="+(num1|num2)+"</li>");
+	document.write("<li>"+ num1 +"^"+num2+"="+(num1^num2)+"</li>");
+	//삼항
+	//대입
+	num1 =2;
+	document.write("<li>num1=2");
+	num1 <<=4;
+	document.write("<li>num1 <<= 4"+num1);
+	num1 >>=1;
+	document.write("<li>num1 >>= 1"+num1);
+	
+	num1=7;
+	num2=2.7;
+	flag1=true;
+	var msg="오늘은 목요일입니다.";
+	var msg1="내일은 금요일입니다.";
+	
+	alert(num1+"데이터형 "+typeof(num1));
+	alert(num2+"데이터형 "+typeof(num2));
+	alert(flag1+"데이터형 "+typeof(flag1));
+	alert(msg1+"데이터형 "+typeof(msg1));
+	alert(msg1+"데이터형 "+typeof(msg1));
+
+	window.onload=function(){
+		var obj=document.getElementById("id");
+		alert(obj+"의 데이터형"+typeof(obj));
+	}//function
+	
+	//변수를 선언하지 않고 사용한 경우
+	alert("선언하지 않은 변수의 데이터형"+typeof(msg2));
+	//수가 아닌 값을 연산하면 NaN이 떨어진다.
+	alert("msg1/2"+ (msg1/2));
+	
+</script>
+</head>
+<body>
+	<input type="text" id="id"/>
+</body>
+</html>

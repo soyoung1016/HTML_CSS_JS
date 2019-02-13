@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:10534/html_prj/common/css/main_v190130.css">
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	window.onload=function() {
+		document.getElementById("frm").addEventListener("click",getName);
+	}//function
+
+	function getName() {
+		var name = document.frm.name.value;
+		
+		var divNode = document.getElementById("h");
+		var h = "<h1>"+name+"</h1>\n"+"<h2>"+name+"</h2>\n"+"<h3>"+name+"</h3>\n"+"<h4>"+name+"</h4>\n"
+				+"<h5>"+name+"</h5>\n"+"<h6>"+name+"</h6>"
+		divNode.innerHTML = h;
+		
+	}
+</script>
+</head>
+<body>
+	<form name="frm">
+		<input type="text" name="name" class="btn"/> 
+		<input type="button" value="확인" class="btn" onclick="getName()"/><br/>
+		<div id="h">
+		</div>
+	</form>
+
+</body>
+</html>

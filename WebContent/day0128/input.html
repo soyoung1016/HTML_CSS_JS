@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML Form Control</title>
+</head>
+<body>
+<!-- HTML Form Control : 사용자가 입력하는 값을 받기 위한 HTML제공 객체들 -->
+<strong>입력객체</strong>
+<br>
+<strong>&lt;input&gt;태그의 공통속성</strong><br>
+<br>
+<!-- disabled는 입력(수정) 불가, 서버로 값 전송 X -->
+<!-- <input type="text" name="test" disabled="disabled"/><br> --> 
+
+<form action="test.jsp" method="post">
+<fieldset>
+<legend>HTML Form Control연습</legend>
+<strong>수정불가 input</strong><br>
+<!-- readonly는 입력(수정) 불가, 서버로 값 전송 됨 -->
+<input type="text" name="test" readonly="readonly"/><br>
+<br>
+<strong>size, maxlength, 서버로 전송되는 value</strong><br>
+<!-- text : 짧은 문자열 데이터(ID, 이름, 주소, 제목..)를 입력받을 때 -->
+<!-- 넓이 : size=보여줄 글자수
+최대 입력 글자수 : maxlength
+아무값도 입력하지 않았을 때 서버로 전송할 값(입력하면 입력한 값이 전송된다) : value=
+HTML5에서 추가된 속성 : 사용자가 값을 입력하기 전까지 안내 문자열을 보여줄 때
+placeholder="제공할 문자열"
+size와 maxlength는 아무런 관련이 없다 -->
+<input type="text" name="id" size="10" maxlength="5" placeholder="아이디"/><br>
+<br>
+<strong>**표시 input</strong><br>
+<!-- type="password" : 비밀번호나 외부에 값을 노출시키지 말아야할 데이터를 입력받을 때 한글이 입력되지 않는다.-->
+<input type="password" name="pass" size="10" maxlength="20" placeholder="비밀번호"/><br>
+<br>
+<!-- type="checkbox" : 보기로 준비된 값 중 사용자가 여러개를 선택하여 입력할 때!
+	value="서버로 전송할 값"
+	name="이름을 동일하게 설정하면 그룹으로 묶여진다. 배열로 처리된다."
+	checked는 특정 checkbox가 선택이된 상태로 제공할 때
+	4.0.1까지는 checked 권장, HTML5에서는 checked="checked"를 권장-->
+<strong>체크박스, 좋아하는 과일 입력</strong><br>
+<input type="checkbox" value="사과" name="fruit"/>사과(가을)<br>
+<input type="checkbox" value="배" name="fruit" checked/>배(가을)<br>
+<input type="checkbox" value="딸기" name="fruit"/>딸기(봄)<br>
+<input type="checkbox" value="포도" name="fruit"/>포도(여름)<br>
+<br>
+<!-- type="radio" : 보기로 준비된 값 중 사용자가 한개를 선택하여 입력할 때
+	name="그룹의 이름" -->
+<strong>라디오버튼</strong><br>
+<input type="radio" value="남자" name="gender" checked="checked"/>남자<br>
+<input type="radio" value="여자" name="gender"/>여자<br>
+<br>
+<strong>히든 input, 안보임</strong><br>
+<!-- type="hidden" : 사용자에게 값을 노출시키지 않고 서버로 값을 전달해야할 때
+	 JavaScript에서 값을 변경한 후 서버로 전송하는 경우 -->
+<input type="hidden" name="addr" value="서울시 강남구 역삼동"/><br>
+<br>
+<strong>image input</strong><br>
+<!-- type="image" : 이미지를 제공할 때, 사용자가 클릭하면 서버로 전송하게 된다.
+		submit 기능(<form>태그 안에 모든 HTML Form Control들이 가진 값을 서버로 전송하는 일)을 가지고 있다.-->
+<input type="image" src="../common/images/sist_logo.jpg"/><!-- 잘 쓰지않는다. 에러가 발생하나봐.. 그냥 img태그나 쓰자 -->
+<img src="../common/images/sist_logo.jpg"/><br>
+<br>
+<strong>file input</strong><br>
+<!-- type="file" 파일전송할 때 : JavaScript에서 값 변경을 할 수 없는 HTML Form Control -->
+<input type="file" name="update" /><br>
+<br>
+<strong>button</strong><br>
+<!-- 버튼 류 : 사용자가 클릭하여 동작 수 있는 HTML Form Control
+	type="submit" : HTML Form Control의 값을 서버로 전송하는 기능, 브라우저마자 정해진 라벨이 존재한다.
+	type="reset" : HTML Form Control의 값을 초기화 하는 기능, 정해진 라벨 존재
+	type="button" : 버튼 모양(JS에서 유효성 검증을 해야하는 경우), 정해진 라벨 없음-->
+<input type="submit" value="전송"/><br>
+<input type="reset" value="초기화"/><br>
+<input type="button" value="버튼"/><br>
+</fieldset>
+<!-- <select> : 정해진 값 중 하나만 선택하여 전송할 때
+	<option value="서버로 전송할 값" selected="selected" />
+	HTML4.0.1 : selected, HTML5 권장 : selected="selected"
+	size : 보여줄 옵션의 갯수 -->
+<label>지역선택</label>
+<select name="loc">
+	<option>----지역선택----</option>
+	<option value="서울">서울시</option>
+	<option value="경기">경기도</option>
+	<option value="충청">충청도</option>
+	<option value="경상">경상도</option>
+	<option value="전라">전라도</option>
+	<option value="제주" selected>제주도</option>
+</select>
+<br>
+<select size="5">
+	<option>SKT</option>
+	<option>KT</option>
+	<option>LGT</option>
+</select>
+<br><br>
+<!-- <textarea> : 여러행을 입력할때(많은 양의 문자열을 입력할때) rows="보여줄 행 수" cols="한줄에 쓸 글자수" -->
+<textarea rows="5" cols="30" name="ta">쓰고 싶은 말</textarea>
+
+</form>
+
+</body>
+</html>

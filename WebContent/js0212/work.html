@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:10534/html_prj/common/css/main_v190130.css">
+<style type="text/css">
+	#diceWrap{border:1px solid #333; width:500px; height:400px; 
+				box-shadow:10px 10px 10px #333; margin-left:100px; margin-top:10px;}
+	#inputHeader{height:150px;}
+	#score{height:30px; text-align:center;}
+	#diceView{width:500px; text-align:center; margin-top:50px;}
+</style>
+<script type="text/javascript">
+
+	function emptyCheck() {
+		var obj=document.frm;
+		player1 = obj.player1.value;
+		player2 = obj.player2.value;
+		p1Name = document.getElementById("p1Name");
+		p2Name = document.getElementById("p2Name");
+		result = document.getElementById("result");
+		
+		if(player1.trim() == "" || player2.trim() == "") {
+			alert("사용자를 입력해주세요");
+		} else {
+			p1Name.innerHTML = player1;
+			p2Name.innerHTML = player2;
+			obj.turn[0].checked=true;
+			result.innerHTML = "게임을 시작합니다! 먼저, "+player1+"님의 차례입니다. 주사위를 던져주세요!";
+		}//end else
+	}//emptyCheck
+	
+	
+	score1 = 0;
+	score2 = 0;
+	cnt = 0;
+	function throwDice() {
+		cnt += 1;
+		var obj=document.frm;
+		
+		var num1=parseInt(Math.random()*6)+1;
+		var num2=parseInt(Math.random()*6)+1;
+		
+		if(cnt>6) {
+			alert("게임이 끝났습니다. 초기화 후 이용해주세요!");
+			return;
+		}//end if
+		
+		obj.dice1.src="images/dice_"+num1+".png";
+		obj.dice2.src="images/dice_"+num2+".png";
+		
+		var winner = "";
+		
+		if(obj.turn[0].checked) {
+			score1 += num1+num2;
+			result.innerHTML = score1+" : "+score2
+			obj.turn[1].checked = true;
+		} else {
+			score2 += num1+num2;
+			result.innerHTML = score1+" : "+score2
+			obj.turn[0].checked = true;
+		}//end else
+			
+		if(cnt==6){
+			if(score1>score2) {
+				winner = player1+" 입니다.";
+			} else if(score1=score2) {
+				winner = "없습니다. 무승부!";
+			} else {
+				winner = player2+" 입니다.";
+			}
+			result.innerHTML = "점수는 "+score1+" : "+score2+"로 승자는 "+winner;
+		}//end if
+			
+	}//throwDice_result
+	
+	function resetAll() {
+		cnt = 0;
+		score1=0;
+		score2=0;
+		var obj=document.frm;
+		obj.dice1.src="images/dice_1.png";
+		obj.dice2.src="images/dice_1.png";
+		obj.turn[0].checked = false;
+		obj.turn[1].checked = false;
+		
+		obj.player1.value="";
+		obj.player2.value="";
+		
+		result.innerHTML = "";
+		p1Name.innerHTML = "";
+		p2Name.innerHTML = "";
+	}//reset
+	
+</script>
+</head>
+<body>
+<div id="diceWrap">
+	<form name="frm">
+		<div id="inputHeader">
+			<h2>주사위 게임</h2>
+			<div>
+				<label>사용자1</label>
+				<input type="text" name="player1" class="inputBox"/>
+				<label>사용자2</label>
+				<input type="text" name="player2" class="inputBox"/>
+				<input type="button" value="참여설정" class="btn" onclick="emptyCheck()"/>
+			</div>
+			<div style="text-align:center; margin-top:10px;">
+				<input type="radio" name="turn"/><span id="p1Name"></span>
+				<input type="radio" name="turn"/><span id="p2Name"></span>
+				<input type="button" value="던지기" class="btn" onclick="throwDice()" />
+			</div>
+		</div>
+		<div id="score">
+			판정 : <br/><span id="result"></span>
+			<br/><input type="button" value="초기화" class="btn" onclick="resetAll()"/>
+		</div>
+		<div id="diceView">
+			<img src="images/dice_1.png" name="dice1"/>
+			<img src="images/dice_1.png" name="dice2"/>
+		</div>
+	</form>
+</div>
+</body>
+</html>

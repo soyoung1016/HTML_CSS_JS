@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<title></title>
+<script type="text/javascript">
+	//이차원 배열
+	//1. 일차원 배열 생성
+	var arr = new Array();
+	arr[0] = new Array();
+	arr[1] = new Array();
+	arr[2] = new Array();
+	
+	arr[0][0]="사과";
+	arr[0][1]="배";
+	arr[0][2]="포도";
+	
+	arr[1][0]="토마토";
+	arr[1][1]="양배추";
+	arr[1][2]="양상추";
+	
+	arr[2][0]="수박";
+	arr[2][1]="딸기";
+	arr[2][2]="감";
+	arr[2][3]="오렌지";
+	
+	alert("행의 수 "+arr.length+"\n열의수 "+arr[1].length);
+	
+	
+	document.write("<table>");
+	for(var i = 0; i<arr.length; i++){
+	document.write("<tr>");
+	document.write("<td>"+(i+1)+"</td>");
+		for(var j=0; j<arr[i].length;j++){
+			document.write("<td>"+arr[i][j]+"</td>");
+		}//end for
+		
+	}//end for
+	document.write("</table>");
+	
+	
+</script>
+<style type="text/css"></style>
+</head>
+<body>
+<!-- 작성자 : SIST 
+	 작성일 : 2019. 2. 8.
+	 내용 : -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<title></title>
+<style type="text/css">
+	#tt{box-shadow: 3px 3px 5px #000000; margin: 100px;}
+
+</style>
+<script type="text/javascript">
+	var lang = prompt("언어입력(Java, HTML, JavaScript, css)", "").toLowerCase();
+	
+	if(lang=="css"){
+		name = "Håkon Wium Lie";
+		age = 53;
+		birth = 2019-age-1;
+		img = "hakon.jpg";
+	}else if(lang == "html"){
+		name = "Tim Berners-Lee";
+		age = 63;
+		birth = 2019-age-1;
+		img = "tim.jpg";
+	}else if(lang == "javascript"){
+		name = "Brendan Eich";
+		age = 57;
+		birth = 2019-age-1;
+		img = "brendan.jpg";
+	}else if(lang == "java"){
+		name = "James Gosling";
+		age = 63;
+		birth = 2019-age-1;
+		img = "james.jpg";
+	}	
+	
+	document.write("<table border='1' id='tt'> "
+					+"<tr>"
+						+"<td rowspan='3'><img src= '../common/images/"+img+"'></td>"
+						+"<td>이름</td>"
+						+"<td>"+name+"</td>"
+					+"</tr>"
+					+"<tr>"
+						+"<td>태어난해</td>"
+						+"<td>"+birth+"</td>"
+					+"</tr>"
+					+"<tr>"
+						+"<td>나이</td>"
+						+"<td>"+age+"</td>"
+					+"</tr>");
+</script>
+</head>
+<body>
+</body>
+</html>

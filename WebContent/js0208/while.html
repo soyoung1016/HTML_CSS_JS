@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<title></title>
+<style type="text/css"></style>
+<script type="text/javascript">
+	//while : 최소 0번부터, 최대 조건까지 반복
+	var i = 1;
+	while(i<7){
+		document.write("<h"+i+">오늘은 금요일 ^o^b</h"+i+">");
+		i++;
+	}//end while
+		
+	//do~while : 최소 1번부터, 최대 조건까지 반복
+	var j = 1;
+	do{
+		if(j==5){
+			document.write("<input type='radio' checked='checked' name='^o^b' value='"+j+"'>"+j+"점</input>");
+		}else{
+			document.write("<input type='radio' name='^o^b' value='"+j+"'>"+j+"점</input>");
+		}
+		j++;
+	}while(j<11);
+	
+</script>
+</head>
+<body>
+</body>
+</html>
