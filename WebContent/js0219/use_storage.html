@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:10534/html_prj/common/css/main_v190130.css">
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").addEventListener("click", setData);
+	}//onload
+	
+	function setData() {
+		//사용자가 입력한 값을 계속해서 사용하기 위해 로컬 스토리지에 값 설정
+		var obj=document.frm;
+		
+		localStorage.setItem("name", obj.name.value);
+		localStorage.setItem("img", obj.img.value);
+		
+		var img="";
+		for(var i=0; i<obj.img.length; i++) {
+			if(obj.img[i].checked) {
+				img = obj.img[i].value;
+			}//end if
+		}//end for
+		
+	}//setData
+	
+</script>
+</head>
+<body>
+<form name="frm">
+	<label>이름</label><input type="text" class="inputBox" name="name"/><br/>
+	<label>이미지 선택</label>
+	<table>
+		<tr>
+			<td>
+				<input type="radio" value="img.png" name="img"/>김정윤<br/>
+			</td>
+			<td>
+				<img src="../common/images/img.png" width="80"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" value="img1_1.png" name="img"/>정택성<br/>
+			</td>
+			<td>
+				<img src="../common/images/img1_1.png" width="80"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" value="img2.jpg" name="img"/>이재찬<br/>
+			</td>
+			<td>
+				<img src="../common/images/img2.jpg" width="80"/>
+			</td>
+		</tr>
+	</table>
+	
+	<input type="button" value="입력" id="btn" class="btn"/>
+	<a href="use_storage1.html">페이지 이동</a>
+</form>
+
+</body>
+</html>

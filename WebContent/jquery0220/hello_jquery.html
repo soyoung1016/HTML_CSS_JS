@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:10534/html_prj/common/css/main_v190130.css">
+<style type="text/css">
+</style>
+<!-- CDN을 사용하여 jQuery를 다운로드 받아 사용 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+	$(window).load(function() {
+		alert("window.load:HTML에서 사용할 모든 자원(파일, 이미지...)이 로딩 된 후 동작");
+	});
+	
+	//$(document).ready(function() { //이렇게 다 써도 되지만
+	$(function(){ //줄여서~!
+		alert("document.ready:HTML의 tag정보가 로딩 된 후 동작");
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
